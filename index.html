@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Press keys to listen sound effects.</p>
+
+    <audio data-key="65" src="sounds/8d82b5_Letter_A_Sound_Effect.mp3"></audio>
+    <audio data-key="72" src="sounds/8d82b5_Letter_H_Sound_Effect.mp3"></audio>
+    <audio data-key="83" src="sounds/8d82b5_Letter_S_Sound_Effect.mp3"></audio>>
+    <audio data-key="76" src="sounds/8d82b5_Letter_L_Sound_Effect.mp3"></audio>
+    <audio data-key="32" src="sounds/mixkit-falling-male-scream-391.wav"></audio>
+    <audio data-key="85" src="sounds/8d82b5_Letter_U_Sound_Effect (1).mp3"></audio>
+    <audio data-key="68" src="sounds/kick.wav"></audio>
+    <audio data-key="74" src="sounds/8d82b5_Letter_J_Sound_Effect.mp3"></audio>
+
+    <audio data-key="70" src="sounds/openhat.wav"></audio>
+    <audio data-key="75" src="sounds/boom.wav"></audio>
+    <audio data-key="73" src="sounds/ride.wav"></audio>
+
+    <script>
+        window.addEventListener('keydown', function(e){
+            console.log(e.keyCode);
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            if (!audio) return;
+            audio.currentTime = 0;
+            audio.play();
+        });
+    </script>
+</body>
+</html>
